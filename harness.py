@@ -2,7 +2,6 @@ import inspect
 import random
 import re
 import difflib
-import sys
 import old
 import new
 
