@@ -2,6 +2,7 @@ import inspect
 import random
 import re
 import difflib
+import ast
 import old
 import new
 
@@ -37,8 +38,13 @@ for _ in range(10):
     if not run_asserts():
        break
 
+class v(ast.NodeVisitor):
+    def generic_visit(self, node):
+        print type(node).__name__
+        ast.NodeVisitor.generic_visit(self, node)
+
 def find_xlines():
-    oldtxt = open('old.py').readlines()
+    visitor = v()
     newtxt = open('new.py').readlines()
     changes = []
 
