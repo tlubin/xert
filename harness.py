@@ -55,7 +55,7 @@ def find_xlines():
         if code in ("  ", "- "):
             lineNum += 1
         if code == "- ":
-            minus = (lineNum, line[2:].strip())
+            minus = (lineNum, line[2:].strip()) #saving both line number and code for now
         if code == "+ ":
             changes.append((lineNum, line[2:].strip()))
     return changes
