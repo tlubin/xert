@@ -1,6 +1,8 @@
 import inspect
 import random
 import re
+import difflib
+import sys
 import old
 import new
 
@@ -35,3 +37,35 @@ for _ in range(10):
     new_funcs[idx]()
     if not run_asserts():
        break
+
+def find_xlines():
+    oldtxt = open('old.py').readlines()
+    newtxt = open('new.py').readlines()
+    changes = []
+
+    d = difflib.Differ()
+    diffs = d.compare(oldtxt, newtxt)
+    lineNum = 0
+    minus = None
+
+    for line in diffs:
+        code = line[:2]
+        if minus and code != "? ":
+            changes.append(minus)
+        minus = None
+        if code in ("  ", "- "):
+            lineNum += 1
+        if code == "- ":
+            minus = (lineNum, line[2:].strip())
+        if code == "+ ":
+            changes.append((lineNum, line[2:].strip()))
+    return changes
+
+def find_functions():
+    funcs = []
+    for (ln, _) in find_xlines():
+        for i in range(len(old_funcs)):
+            source = inspect.getsourcelines(old_funcs[i])
+            if ln >= source[1] and ln <= source[1] + len(source[0])-1:
+                funcs.append(old_funcs[i])
+    return funcs
