@@ -1,5 +1,6 @@
 import inspect
 import argparse
+import difflib
 import random
 import re
 
@@ -40,6 +41,38 @@ def run_asserts(old, new, asserts):
                 report("new", x)
             passed = 0
     return passed
+
+def find_xlines():
+    oldtxt = open('old.py').readlines()
+    newtxt = open('new.py').readlines()
+    changes = []
+
+    d = difflib.Differ()
+    diffs = d.compare(oldtxt, newtxt)
+    lineNum = 0
+    minus = None
+
+    for line in diffs:
+        code = line[:2]
+        if minus and code != "? ":
+            changes.append(minus)
+        minus = None
+        if code in ("  ", "- "):
+            lineNum += 1
+        if code == "- ":
+            minus = (lineNum, line[2:].strip()) #saving both line number and code for now
+        if code == "+ ":
+            changes.append((lineNum, line[2:].strip()))
+    return changes
+
+def find_functions():
+    funcs = []
+    for (ln, _) in find_xlines():
+        for i in range(len(old_funcs)):
+            source = inspect.getsourcelines(old_funcs[i])
+            if ln >= source[1] and ln <= source[1] + len(source[0])-1:
+                funcs.append(old_funcs[i])
+    return funcs
 
 def run_analysis(options, old, new, asserts):
     old_funcs = [x for _, x in inspect.getmembers(old, inspect.isfunction)]
