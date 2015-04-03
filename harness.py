@@ -32,6 +32,6 @@ for _ in range(10):
     idx = random.randint(0, max_idx)
     print "Calling " + repr(old_funcs[idx]) # just to see what's going on
     old_funcs[idx]()
-    new_funcs[idx] 
+    new_funcs[idx]()
     if not run_asserts():
        break
