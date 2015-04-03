@@ -1,4 +1,5 @@
 import inspect
+import random
 import re
 import old
 import new
@@ -23,7 +24,14 @@ def run_asserts():
         for x,y in zip(old_vars, new_vars):
             print "old." + x + " = " + str(eval("old." + x))
             print "new." + y + " = " + str(eval("new." + y))
+        return False
+    return True
 
-run_asserts()
-print old_funcs[0]()
-print new_funcs[0]()
+max_idx = len(old_funcs) - 1
+for _ in range(10):
+    idx = random.randint(0, max_idx)
+    print "Calling " + repr(old_funcs[idx]) # just to see what's going on
+    old_funcs[idx]()
+    new_funcs[idx] 
+    if not run_asserts():
+       break
