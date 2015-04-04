@@ -5,7 +5,6 @@ import inspect
 import random
 import re
 
-
 # default options that user can change
 XERT = 'xert_asserts'
 XFUNCS = 'xert_funcs'
@@ -35,6 +34,7 @@ def dump_state(old, new, text):
         print 'new.{} = {}'.format(x, new.x)
 
 def run_analysis(options, old, new):
+    # get old/new functions and cross-asserts
     old_funcs = [f for _, f in inspect.getmembers(old, inspect.isfunction)]
     new_funcs = []
     xfuncs = []
@@ -43,7 +43,7 @@ def run_analysis(options, old, new):
         if x == XERT:
             xassert = f
         elif x == XFUNCS:
-            xfuncs = f()
+            xfuncs = f(old, new)
         else:
             new_funcs.append(f)
     if xassert == None:
@@ -52,12 +52,18 @@ def run_analysis(options, old, new):
     if len(xfuncs) < 1:
         print "define xert_funcs function in new file for analysis"
         return
-    # TODO: constraint generation to guide this
 
+    # constraint generation for every changed function
+    constraints = [[] for _ in range (len(xfuncs[0]))]
+    for i in range(len(xfuncs[0])):
+        constraints[i].append(get_constraints(xfuncs[0][i], xfuncs[1][i]))
+
+    # test interleaving of functions beginning with satisfying context and patched function
+    get_context(constraints[0])
+    #TODO use context to start interleaving of functions
     max_idx = len(old_funcs) - 1
     for _ in range(options['depth']):
         idx = random.randint(0, max_idx)
-
         print "Calling " + repr(old_funcs[idx]) # just to see what's going on
         # TODO: also check return value?? let user assert things about returns...
         old_funcs[idx]()
@@ -86,6 +92,14 @@ def parse_commandline():
     old = __import__(options['oldfile'])
     new = __import__(options['newfile'])
     return options, old, new
+
+#TODO get interleaving of function calls to satisfy given constraint set
+def get_context(c):
+    return 0
+
+#TODO generate the set of constraints necessary to get different outcome from patch
+def get_constraints(oldf, newf):
+    return 0
 
 def main():
     options, old, new = parse_commandline()

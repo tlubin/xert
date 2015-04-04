@@ -1,4 +1,4 @@
-x = 11
+x = 14
 y = 5
 
 def f1():
@@ -6,5 +6,6 @@ def f1():
 
 def f2():
     global x
-    x = 14
+    if (x == 14):
+        x = 1
     return 43
