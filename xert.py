@@ -1,8 +1,10 @@
-import inspect
 import argparse
+import coverage
 import difflib
+import inspect
 import random
 import re
+
 
 # default options that user can change
 defaults = {
@@ -77,6 +79,15 @@ def run_analysis(options, old, new, asserts):
     old_funcs = [x for _, x in inspect.getmembers(old, inspect.isfunction)]
     new_funcs = [x for _, x in inspect.getmembers(new, inspect.isfunction)]
     # TODO: constraint generation to guide this
+    #cov = coverage.Coverage()
+    #set coverage to monitor only for patch code lines
+    #instrument new.py to include raise SystemExit before patched code
+    #cov.start()
+    #symbolic execution of function here to get constraints
+    #call cov.stop every time sym. exe. completes a path (exits function)
+    #check if cov.stop shows patched line is covered
+    #cov.stop()
+
     max_idx = len(old_funcs) - 1
     for _ in range(options['depth']):
         idx = random.randint(0, max_idx)
@@ -110,5 +121,5 @@ def main():
     options, old, new = parse_commandline()
     asserts = parse_asserts()
     run_analysis(options, old, new, asserts)
-    find_xlines()
+
 main()
