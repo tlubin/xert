@@ -2,9 +2,9 @@ x = 11
 y = 5
 
 def f1():
-    return 45
+    return 42
 
 def f2():
-    x = 13
-    y = 12
+    global x
+    x = 14
     return 43
