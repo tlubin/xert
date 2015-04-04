@@ -8,6 +8,7 @@ import re
 
 # default options that user can change
 XERT = 'xert_asserts'
+XFUNCS = 'xert_funcs'
 defaults = {
     'depth' : 10
 }
@@ -35,18 +36,28 @@ def dump_state(old, new, text):
 
 def run_analysis(options, old, new):
     old_funcs = [f for _, f in inspect.getmembers(old, inspect.isfunction)]
-    new_funcs = [f for x, f in inspect.getmembers(new, inspect.isfunction) if x != XERT]
-    xassert = [f for x, f in inspect.getmembers(new, inspect.isfunction) if x == XERT]
-    if len(xassert) != 1:
-        print "define xassert function in new file for analysis"
+    new_funcs = []
+    xfuncs = []
+    xassert = None
+    for x, f in inspect.getmembers(new, inspect.isfunction):
+        if x == XERT:
+            xassert = f
+        elif x == XFUNCS:
+            xfuncs = f()
+        else:
+            new_funcs.append(f)
+    if xassert == None:
+        print "define xert_asserts function in new file for analysis"
         return
-    else:
-        xassert = xassert[0]
+    if len(xfuncs) < 1:
+        print "define xert_funcs function in new file for analysis"
+        return
     # TODO: constraint generation to guide this
 
     max_idx = len(old_funcs) - 1
     for _ in range(options['depth']):
         idx = random.randint(0, max_idx)
+
         print "Calling " + repr(old_funcs[idx]) # just to see what's going on
         # TODO: also check return value?? let user assert things about returns...
         old_funcs[idx]()
@@ -78,6 +89,5 @@ def parse_commandline():
 
 def main():
     options, old, new = parse_commandline()
-    asserts = parse_asserts()
-    run_analysis(options, old, new, asserts)
+    run_analysis(options, old, new)
 main()

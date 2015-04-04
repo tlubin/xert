@@ -9,5 +9,8 @@ def f2():
     x = 13
     return 43
 
+def xert_funcs():
+    return [f2]
+
 def xert_asserts(old, new):
     assert(old.x == new.x)
