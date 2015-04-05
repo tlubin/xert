@@ -56,7 +56,7 @@ def run_analysis(options, old, new):
     # constraint generation for every changed function
     constraints = [[] for _ in range (len(xfuncs[0]))]
     for i in range(len(xfuncs[0])):
-        constraints[i].append(get_constraints(xfuncs[0][i], xfuncs[1][i]))
+        constraints[i] = get_constraints(xfuncs[0][i], xfuncs[1][i])
 
     # test interleaving of functions beginning with satisfying context and patched function
     get_context(constraints[0])
@@ -95,11 +95,26 @@ def parse_commandline():
 
 #TODO get interleaving of function calls to satisfy given constraint set
 def get_context(c):
-    return 0
+    #run some function interleaving
+    #after each function runs, test the following on the state of "new"
+    satisfied = 1
+    for constraint in c:
+        try:
+            assert constraint
+        except AssertionError:
+            satisfied = 0
+            break
+    if satisfied:
+        #return satisfying function interleaving
+        return 1
+    else:
+        #try a different function interleaving or continue this one
+        return 0
 
 #TODO generate the set of constraints necessary to get different outcome from patch
 def get_constraints(oldf, newf):
-    return 0
+    #some symbolic execution magic here
+    return []
 
 def main():
     options, old, new = parse_commandline()
