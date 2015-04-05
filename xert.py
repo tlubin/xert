@@ -29,9 +29,9 @@ def vars_of_assert(myassert):
 def dump_state(old, new, text):
     old_vars, new_vars = vars_of_assert(text)
     for x in old_vars:
-        print 'old.{} = {}'.format(x, old.x)
+        print('old.{} = {}'.format(x, old.x))
     for x in new_vars:
-        print 'new.{} = {}'.format(x, new.x)
+        print('new.{} = {}'.format(x, new.x))
 
 def run_analysis(options, old, new):
     # get old/new functions and cross-asserts
@@ -47,10 +47,10 @@ def run_analysis(options, old, new):
         else:
             new_funcs.append(f)
     if xassert == None:
-        print "define xert_asserts function in new file for analysis"
+        print("define xert_asserts function in new file for analysis")
         return
     if len(xfuncs) < 1:
-        print "define xert_funcs function in new file for analysis"
+        print("define xert_funcs function in new file for analysis")
         return
 
     # constraint generation for every changed function
@@ -64,14 +64,14 @@ def run_analysis(options, old, new):
     max_idx = len(old_funcs) - 1
     for _ in range(options['depth']):
         idx = random.randint(0, max_idx)
-        print "Calling " + repr(old_funcs[idx]) # just to see what's going on
+        print("Calling " + repr(old_funcs[idx])) # just to see what's going on
         # TODO: also check return value?? let user assert things about returns...
         old_funcs[idx]()
         new_funcs[idx]()
         try:
             xassert(old, new)
         except AssertionError:
-            print "xassert FAILED"
+            print("xassert FAILED")
             _, _, tb = sys.exc_info()
             traceback.print_tb(tb)
             tb_info = traceback.extract_tb(tb)
