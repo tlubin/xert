@@ -30,9 +30,9 @@ def vars_of_assert(myassert):
 def dump_state(old, new, text):
     old_vars, new_vars = vars_of_assert(text)
     for x in old_vars:
-        print('old.{} = {}'.format(x, old.x))
+        print('old.{} = {}'.format(x, getattr(old,x)))
     for x in new_vars:
-        print('new.{} = {}'.format(x, new.x))
+        print('new.{} = {}'.format(x, getattr(new,x)))
 
 def run_analysis(options, old, new):
     # get old/new functions and cross-asserts

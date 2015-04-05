@@ -1,11 +1,10 @@
-x = 14
-y = 5
+b1_counter = 0
+b2_counter = 0
 
-def f1():
-    return 42
+def b1_pressed():
+    global b1_counter
+    b1_counter += 1
 
-def f2():
-    global x
-    if (x == 14):
-        x = 1
-    return 43
+def b2_pressed():
+    global b2_counter
+    b2_counter += 1
