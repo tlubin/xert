@@ -49,9 +49,9 @@ def find_divergent(filename, func_name, inputs, retVals, path):
             div_constraints.append(0)
     return div_constraints
 
+# example usage
 inputs, retVals, path = sym_exec('test1.py', 'f')
 find_divergent('test1x.py', 'f', inputs, retVals, path)
 
 inputs, retVals, path = sym_exec('test1x.py', 'f')
 find_divergent('test1.py', 'f', inputs, retVals, path)
-
