@@ -10,10 +10,5 @@ def f2():
         x = 0
     return 43
 
-def xert_funcs(old, new):
-    old = [old.f2]
-    new = [new.f2]
-    return (old, new)
-
 def xert_asserts(old, new):
     assert(old.x == new.x)
