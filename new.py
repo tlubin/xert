@@ -1,19 +1,15 @@
-x = 14
-y = 5
+b1_counter = 0
+b2_counter = 0
 
-def f1():
-    return 42
+def b1_pressed():
+    global b1_counter
+    b1_counter += 1
 
-def f2():
-    global x
-    if (x == 14):
-        x = 0
-    return 43
-
-def xert_funcs(old, new):
-    old = [old.f2]
-    new = [new.f2]
-    return (old, new)
+def b2_pressed():
+    global b2_counter
+    if b2_counter < 3: # ADDED LINE
+        b2_counter += 1
 
 def xert_asserts(old, new):
-    assert(old.x == new.x)
+    assert(old.b1_counter == new.b1_counter)
+    assert(old.b2_counter == new.b2_counter)

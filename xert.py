@@ -4,13 +4,30 @@ import traceback
 import inspect
 import random
 import re
+import ast
+import xert_transform as xtr
+import os
+
+sys.path.append(os.path.abspath('codegen'))
+import codegen
 
 # default options that user can change
-XERT = 'xert_asserts'
-XFUNCS = 'xert_funcs'
+XASSERT = 'xert_asserts'
 defaults = {
     'depth' : 10
 }
+
+def asts_to_src_str(asts):
+    src = ''
+    for t in asts:
+        src += codegen.to_source(t) + '\n'
+    return src
+
+def asts_to_src_file(asts, filename, mode='w+'):
+    src = asts_to_src_str(asts)
+    f = open(filename, mode)
+    f.write(src)
+    f.close()
 
 def vars_of_assert(myassert):
     old_re = "old.\w+" # this is not right...e.g. old.0
@@ -29,37 +46,29 @@ def vars_of_assert(myassert):
 def dump_state(old, new, text):
     old_vars, new_vars = vars_of_assert(text)
     for x in old_vars:
-        print('old.{} = {}'.format(x, old.x))
+        print('old.{} = {}'.format(x, getattr(old,x)))
     for x in new_vars:
-        print('new.{} = {}'.format(x, new.x))
+        print('new.{} = {}'.format(x, getattr(new,x)))
 
 def run_analysis(options, old, new):
     # get old/new functions and cross-asserts
     old_funcs = [f for _, f in inspect.getmembers(old, inspect.isfunction)]
     new_funcs = []
-    xfuncs = []
     xassert = None
     for x, f in inspect.getmembers(new, inspect.isfunction):
-        if x == XERT:
+        if x == XASSERT:
             xassert = f
-        elif x == XFUNCS:
-            xfuncs = f(old, new)
         else:
             new_funcs.append(f)
     if xassert == None:
         print("define xert_asserts function in new file for analysis")
         return
-    if len(xfuncs) < 1:
-        print("define xert_funcs function in new file for analysis")
-        return
 
     # constraint generation for every changed function
-    constraints = [[] for _ in range (len(xfuncs[0]))]
-    for i in range(len(xfuncs[0])):
-        constraints[i] = get_constraints(xfuncs[0][i], xfuncs[1][i])
+    constraints = get_constraints(old_funcs, new_funcs)
 
     # test interleaving of functions beginning with satisfying context and patched function
-    get_context(constraints[0])
+    get_context(constraints)
     #TODO use context to start interleaving of functions
     max_idx = len(old_funcs) - 1
     for _ in range(options['depth']):
@@ -112,11 +121,33 @@ def get_context(c):
         return 0
 
 #TODO generate the set of constraints necessary to get different outcome from patch
-def get_constraints(oldf, newf):
-    #some symbolic execution magic here
+def get_constraints(old_funcs, new_funcs):
+    assert len(old_funcs) == len(new_funcs), "TODO: length of old and new functions should be equal"
+    constraints = [[] for _ in old_funcs]
+    old_transformed_asts = []
+    new_transformed_asts = []
+    for f in old_funcs:
+        f_ast = ast.parse(inspect.getsource(f))
+        old_transformed_asts.append(xtr.transform(f_ast))
+    for f in new_funcs:
+        f_ast = ast.parse(inspect.getsource(f))
+        new_transformed_asts.append(xtr.transform(f_ast))
+
+    # convert the transformed asts to source code and save to tmp files
+    tmp_dir = 'xert_tmp'
+    if not os.path.exists(tmp_dir):
+        os.mkdir(tmp_dir)
+    tmp_file_old = os.path.join(tmp_dir, '__old.py')
+    tmp_file_new = os.path.join(tmp_dir, '__new.py')
+    asts_to_src_file(old_transformed_asts, tmp_file_old) 
+    asts_to_src_file(new_transformed_asts, tmp_file_new) 
+
+    # TODO: call into symbolic executor with path to tmp file
     return []
 
 def main():
     options, old, new = parse_commandline()
     run_analysis(options, old, new)
-main()
+
+if __name__ == '__main__':
+    main()
