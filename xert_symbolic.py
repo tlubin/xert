@@ -1,5 +1,6 @@
 import inspect
 import imp
+import logging
 import os, sys
 sys.path.append(os.path.abspath('pyexz3'))
 
@@ -11,6 +12,7 @@ def sym_exec(filename, func):
     max_iters = 0
     solver = "z3"
     app = loaderFactory(filename,func)
+    logging.basicConfig(filename='constraints.log',level=logging.DEBUG)
     print(("Exploring " + app.getFile() + "." + app.getEntry()))
 
     result = None

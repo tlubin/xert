@@ -46,7 +46,7 @@ class ExplorationEngine:
 
 	def explore(self, max_iterations=0):
 		self._oneExecution()
-		
+
 		iterations = 1
 		if max_iterations != 0 and iterations >= max_iterations:
 			log.debug("Maximum number of iterations reached, terminating")
@@ -56,7 +56,7 @@ class ExplorationEngine:
 			selected = self.constraints_to_solve.popleft()
 			if selected.processed:
 				continue
-			self._setInputs(selected.inputs)			
+			self._setInputs(selected.inputs)
 
 			log.info("Selected constraint %s" % selected)
 			asserts, query = selected.getAssertsAndQuery()
@@ -70,7 +70,7 @@ class ExplorationEngine:
 
 			self._oneExecution(selected)
 
-			iterations += 1			
+			iterations += 1
 			self.num_processed_constraints += 1
 
 			if max_iterations != 0 and iterations >= max_iterations:
@@ -110,7 +110,7 @@ class ExplorationEngine:
 		inputs = [ (k,self._getConcrValue(args[k])) for k in args ]
 		self.generated_inputs.append(inputs)
 		print(inputs)
-		
+
 	def _oneExecution(self,expected_path=None):
 		self._recordInputs()
 		self.path.reset(expected_path)
