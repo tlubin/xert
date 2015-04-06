@@ -132,11 +132,16 @@ def get_constraints(old_funcs, new_funcs):
     for f in new_funcs:
         f_ast = ast.parse(inspect.getsource(f))
         new_transformed_asts.append(xtr.transform(f_ast))
+
+    # convert the transformed asts to source code and save to tmp files
     tmp_dir = 'xert_tmp'
     if not os.path.exists(tmp_dir):
         os.mkdir(tmp_dir)
-    asts_to_src_file(old_transformed_asts, os.path.join(tmp_dir, '__old.py')) 
-    asts_to_src_file(new_transformed_asts, os.path.join(tmp_dir, '__new.py')) 
+    tmp_file_old = os.path.join(tmp_dir, '__old.py')
+    tmp_file_new = os.path.join(tmp_dir, '__new.py')
+    asts_to_src_file(old_transformed_asts, tmp_file_old) 
+    asts_to_src_file(new_transformed_asts, tmp_file_new) 
+
     # TODO: call into symbolic executor with path to tmp file
     return []
 
