@@ -6,12 +6,28 @@ import random
 import re
 import ast
 import xert_transform as xtr
+import os
+
+sys.path.append(os.path.abspath('codegen'))
+import codegen
 
 # default options that user can change
 XASSERT = 'xert_asserts'
 defaults = {
     'depth' : 10
 }
+
+def asts_to_src_str(asts):
+    src = ''
+    for t in asts:
+        src += codegen.to_source(t) + '\n'
+    return src
+
+def asts_to_src_file(asts, filename, mode='w+'):
+    src = asts_to_src_str(asts)
+    f = open(filename, mode)
+    f.write(src)
+    f.close()
 
 def vars_of_assert(myassert):
     old_re = "old.\w+" # this is not right...e.g. old.0
@@ -116,11 +132,17 @@ def get_constraints(old_funcs, new_funcs):
     for f in new_funcs:
         f_ast = ast.parse(inspect.getsource(f))
         new_transformed_asts.append(xtr.transform(f_ast))
-    # TODO: write these to temporary files...
+    tmp_dir = 'xert_tmp'
+    if not os.path.exists(tmp_dir):
+        os.mkdir(tmp_dir)
+    asts_to_src_file(old_transformed_asts, os.path.join(tmp_dir, '__old.py')) 
+    asts_to_src_file(new_transformed_asts, os.path.join(tmp_dir, '__new.py')) 
     # TODO: call into symbolic executor with path to tmp file
     return []
 
 def main():
     options, old, new = parse_commandline()
     run_analysis(options, old, new)
-main()
+
+if __name__ == '__main__':
+    main()
