@@ -3,9 +3,10 @@ def f(x, y, z):
         if x < 0:
             return 1
             #return (x,y,z)
-        else:
+        elif x < 4:
             return 0
-            #global x
-            #x = x + 1
-            #return (x, y, z)
+        elif x > 7:
+            return 3
+        else:
+            return 2
     return g()

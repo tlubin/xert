@@ -6,6 +6,7 @@ import random
 import re
 import ast
 import xert_transform as xtr
+#import xert_symbolic as xsym
 import os
 
 sys.path.append(os.path.abspath('codegen'))
@@ -14,7 +15,7 @@ import codegen
 # default options that user can change
 XASSERT = 'xert_asserts'
 defaults = {
-    'depth' : 10
+    'depth' : 20
 }
 
 def asts_to_src_str(asts):
@@ -139,8 +140,8 @@ def get_constraints(old_funcs, new_funcs):
         os.mkdir(tmp_dir)
     tmp_file_old = os.path.join(tmp_dir, '__old.py')
     tmp_file_new = os.path.join(tmp_dir, '__new.py')
-    asts_to_src_file(old_transformed_asts, tmp_file_old) 
-    asts_to_src_file(new_transformed_asts, tmp_file_new) 
+    asts_to_src_file(old_transformed_asts, tmp_file_old)
+    asts_to_src_file(new_transformed_asts, tmp_file_new)
 
     # TODO: call into symbolic executor with path to tmp file
     return []

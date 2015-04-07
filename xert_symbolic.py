@@ -10,22 +10,23 @@ from symbolic.explore import ExplorationEngine
 
 def sym_exec(filename, func):
     max_iters = 0
-    solver = "z3"
     app = loaderFactory(filename,func)
     logging.basicConfig(filename='constraints.log',level=logging.DEBUG)
-    print(("Exploring " + app.getFile() + "." + app.getEntry()))
+    #print(("Exploring " + app.getFile() + "." + app.getEntry()))
 
     result = None
     try:
-        engine = ExplorationEngine(app.createInvocation(), solver=solver)
-        generatedInputs, returnVals, path = engine.explore(max_iters)
+        engine = ExplorationEngine(app.createInvocation())
+        generatedInputs, returnVals, C = engine.explore(max_iters)
     except ImportError:
         # createInvocation can raise this
         sys.exit(1)
-    return (generatedInputs, returnVals, path)
+    return (generatedInputs, returnVals, C)
 
 
-def find_divergent(filename, func_name, inputs, retVals, path):
+def find_divergent(filename, func_name, inputs, retVals, constraints):
+    for x in constraints:
+        print(x)
     func = None
     module = imp.load_source("__inspected__", filename)
     for x, f in inspect.getmembers(module, inspect.isfunction):
@@ -47,13 +48,18 @@ def find_divergent(filename, func_name, inputs, retVals, path):
         if func(*vals) == retVals[i]:
             continue
         else:
-            #TODO find constraints by traversing path and add to div_constraints
-            div_constraints.append(0)
+            flag = 1
+            for vdict, c in constraints:
+                for var2, val in inputs[i]:
+                    continue
+                #TODO vdict[var2] is currently a symbolic integer, not concrete
+            if flag:
+                div_constraints.append((inputs[i], c))
     return div_constraints
 
 # example usage
-inputs, retVals, path = sym_exec('test1.py', 'f')
-find_divergent('test1x.py', 'f', inputs, retVals, path)
+inputs, retVals, c= sym_exec('test1.py', 'f')
+find_divergent('test1x.py', 'f', inputs, retVals, c)
 
-inputs, retVals, path = sym_exec('test1x.py', 'f')
-find_divergent('test1.py', 'f', inputs, retVals, path)
+inputs, retVals, c = sym_exec('test1x.py', 'f')
+print(find_divergent('test1.py', 'f', inputs, retVals, c))
