@@ -1,12 +1,10 @@
-def f(x, y, z):
+def f(x, y):
     def g():
-        if x < 0:
-            return 1
-            #return (x,y,z)
-        elif x < 4:
-            return 0
-        elif x > 7:
-            return 3
+        if x < 1:
+            if y < 1:
+                return 1
+            else:
+                return 2
         else:
-            return 2
+            return 0
     return g()

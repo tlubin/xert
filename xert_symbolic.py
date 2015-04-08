@@ -59,7 +59,7 @@ def find_divergent(filename, func_name, inputs, retVals, constraints):
 
 # example usage
 inputs, retVals, c= sym_exec('test1.py', 'f')
-find_divergent('test1x.py', 'f', inputs, retVals, c)
+print(find_divergent('test1x.py', 'f', inputs, retVals, c))
 
 inputs, retVals, c = sym_exec('test1x.py', 'f')
-print(find_divergent('test1.py', 'f', inputs, retVals, c))
+#print(find_divergent('test1.py', 'f', inputs, retVals, c))

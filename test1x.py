@@ -1,11 +1,7 @@
-def f(x, y, z):
+def f(x, y):
     def g():
         if x < 0:
             return 1
-            #return (x,y,z)
         else:
-            return 1
-            #global x
-            #x = x + 1
-            #return (x, y, z)
+            return 0
     return g()
