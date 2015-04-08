@@ -20,8 +20,4 @@ def get_globals(mod):
     return getter.globs
 
 def get_initial_state(mod):
-    globs = get_globals(mod)
-    state = {}
-    for g in globs:
-        state[g] = mod.__dict__[g]
-    return state
+    return {g: mod.__dict__[g] for g in get_globals(mod)}
