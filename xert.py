@@ -7,6 +7,7 @@ import re
 import ast
 import xert_transform as xtr
 #import xert_symbolic as xsym
+import xert_init as xinit
 import os
 
 sys.path.append(os.path.abspath('codegen'))
@@ -52,6 +53,11 @@ def dump_state(old, new, text):
         print('new.{} = {}'.format(x, getattr(new,x)))
 
 def run_analysis(options, old, new):
+    # get initial state (i.e. map from globals to initial values)
+    # TODO where should these be passed to?
+    old_init_state = xinit.get_initial_state(old)
+    new_init_state = xinit.get_initial_state(new)
+
     # get old/new functions and cross-asserts
     old_funcs = [f for _, f in inspect.getmembers(old, inspect.isfunction)]
     new_funcs = []
@@ -138,10 +144,10 @@ def get_constraints(old_funcs, new_funcs):
     tmp_dir = 'xert_tmp'
     if not os.path.exists(tmp_dir):
         os.mkdir(tmp_dir)
-    tmp_file_old = os.path.join(tmp_dir, '__old.py')
-    tmp_file_new = os.path.join(tmp_dir, '__new.py')
-    asts_to_src_file(old_transformed_asts, tmp_file_old)
-    asts_to_src_file(new_transformed_asts, tmp_file_new)
+    old_tmp_file = os.path.join(tmp_dir, '__old.py')
+    asts_to_src_file(old_transformed_asts, old_tmp_file)
+    new_tmp_file = os.path.join(tmp_dir, '__new.py')
+    asts_to_src_file(new_transformed_asts, new_tmp_file)
 
     # TODO: call into symbolic executor with path to tmp file
     return []
