@@ -25,8 +25,9 @@ def sym_exec(filename, func):
 
 
 def find_divergent(filename, func_name, inputs, retVals, constraints):
-    for x in constraints:
+    '''for x in constraints:
         print(x)
+        print('\n')'''
     func = None
     module = imp.load_source("__inspected__", filename)
     for x, f in inspect.getmembers(module, inspect.isfunction):
@@ -49,9 +50,9 @@ def find_divergent(filename, func_name, inputs, retVals, constraints):
             continue
         else:
             flag = 1
-            for vdict, c in constraints:
-                for var2, val in inputs[i]:
-                    continue
+            #for vdict, c in constraints:
+            #    for var2, val in inputs[i]:
+            #        continue
                 #TODO vdict[var2] is currently a symbolic integer, not concrete
             if flag:
                 div_constraints.append((inputs[i], c))
@@ -59,7 +60,7 @@ def find_divergent(filename, func_name, inputs, retVals, constraints):
 
 # example usage
 inputs, retVals, c= sym_exec('test1.py', 'f')
-print(find_divergent('test1x.py', 'f', inputs, retVals, c))
+find_divergent('test1x.py', 'f', inputs, retVals, c)
 
-inputs, retVals, c = sym_exec('test1x.py', 'f')
+#inputs, retVals, c = sym_exec('test1x.py', 'f')
 #print(find_divergent('test1.py', 'f', inputs, retVals, c))

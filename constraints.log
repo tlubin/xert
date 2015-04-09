@@ -6348,3 +6348,811 @@ DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, 
 DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
 INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
 INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+INFO:se.conc:Selected input {'y': 0, 'x': 0}
+INFO:se.conc:asserts []
+INFO:se.conc:query (< x#0, 1) (True)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+INFO:se.conc:Counterexample name: x
+INFO:se.conc:Counterexample val: 4
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:Selected input {'y': 0, 'x': 0}
+INFO:se.conc:asserts [(< x#0, 1) (True)]
+INFO:se.conc:query (< y#0, 1) (True)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+INFO:se.conc:Counterexample name: y
+INFO:se.conc:Counterexample val: 4
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:Selected input {'y': 0, 'x': 0}
+INFO:se.conc:asserts []
+INFO:se.conc:query (< x#0, 0) (False)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+INFO:se.conc:Counterexample name: x
+INFO:se.conc:Counterexample val: -16
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+INFO:se.conc:Selected input {'x': 0, 'y': 0}
+INFO:se.conc:asserts []
+INFO:se.conc:query (< x#0, 1) (True)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+INFO:se.conc:Counterexample name: x
+INFO:se.conc:Counterexample val: 4
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:Selected input {'x': 0, 'y': 0}
+INFO:se.conc:asserts [(< x#0, 1) (True)]
+INFO:se.conc:query (< y#0, 1) (True)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+INFO:se.conc:Counterexample name: y
+INFO:se.conc:Counterexample val: 4
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:Selected input {'x': 0, 'y': 0}
+INFO:se.conc:asserts []
+INFO:se.conc:query (< x#0, 0) (False)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+INFO:se.conc:Counterexample name: x
+INFO:se.conc:Counterexample val: -16
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 1) (True)  (processed: False, path_len: 1)
+INFO:se.conc:Selected input {'x': 0, 'y': 0}
+INFO:se.conc:asserts []
+INFO:se.conc:query (< x#0, 1) (True)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+INFO:se.conc:Counterexample name: x
+INFO:se.conc:Counterexample val: 4
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+INFO:se.conc:Selected constraint (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:Selected input {'x': 0, 'y': 0}
+INFO:se.conc:asserts [(< x#0, 1) (True)]
+INFO:se.conc:query (< y#0, 1) (True)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+INFO:se.conc:Counterexample name: y
+INFO:se.conc:Counterexample val: 4
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+INFO:se.conc:Selected constraint (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:Selected input {'x': 0, 'y': 0}
+INFO:se.conc:asserts []
+INFO:se.conc:query (< x#0, 0) (False)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+INFO:se.conc:Counterexample name: x
+INFO:se.conc:Counterexample val: -16
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 1) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 1) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 1) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 4}
+DEBUG:se.pathconstraint:New constraint: (< x#4, 1) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#4, 1) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+DEBUG:se.z3:Query -- (< y#0, 1) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 1) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 4}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 1) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#4, 1) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#4, 1) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 5) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 5) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 5) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 8}
+DEBUG:se.pathconstraint:New constraint: (< x#8, 5) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#8, 5) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+DEBUG:se.z3:Query -- (< y#0, 5) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 5) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 8}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 5) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#8, 5) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#8, 5) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 5) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 5) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 5) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 8}
+DEBUG:se.pathconstraint:New constraint: (< x#8, 5) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#8, 5) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+DEBUG:se.z3:Query -- (< y#0, 5) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 5) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 8}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 5) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#8, 5) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#8, 5) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 5) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 5) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 5) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 8}
+DEBUG:se.pathconstraint:New constraint: (< x#8, 5) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#8, 5) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+DEBUG:se.z3:Query -- (< y#0, 5) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 5) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 8}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 5) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#8, 5) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#8, 5) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 0) (False)  (processed: False, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 1, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 0) (False)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': -16}
+DEBUG:se.pathconstraint:New constraint: (< x#-16, 0) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#-16, 0) (True)  (processed: True, path_len: 1)
+INFO:se.conc:1 constraints yet to solve (total: 2, already solved: 1)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 5) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 5) (True)  (processed: False, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 2, already solved: 0)
+DEBUG:se.z3:Query -- (< x#0, 5) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 8}
+DEBUG:se.pathconstraint:New constraint: (< x#8, 5) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#8, 5) (False)  (processed: True, path_len: 1)
+INFO:se.conc:2 constraints yet to solve (total: 3, already solved: 1)
+DEBUG:se.z3:Query -- (< y#0, 5) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 5) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 8}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 5) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#8, 5) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#8, 5) (False)  (processed: True, path_len: 2)
+INFO:se.conc:2 constraints yet to solve (total: 4, already solved: 2)
+INFO:se.conc:1 constraints yet to solve (total: 3, already solved: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 5) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 5) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< x#0, 5) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 8}
+DEBUG:se.pathconstraint:New constraint: (< x#8, 5) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#8, 5) (False)  (processed: True, path_len: 1)
+DEBUG:se.z3:Query -- (< y#0, 5) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 5) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 8}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 5) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#8, 5) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#8, 5) (False)  (processed: True, path_len: 2)
+INFO:se.conc:Exploration complete
+DEBUG:se.pathconstraint:New constraint: (< x#0, 5) (True)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#0, 5) (True)  (processed: False, path_len: 2)
+DEBUG:se.z3:Query -- (< x#0, 5) (True)
+DEBUG:se.z3:Asserts -- []
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'x': 8}
+DEBUG:se.pathconstraint:New constraint: (< x#8, 5) (False)  (processed: False, path_len: 1)
+DEBUG:se.pathconstraint:Processed constraint: (< x#8, 5) (False)  (processed: True, path_len: 1)
+DEBUG:se.z3:Query -- (< y#0, 5) (True)
+DEBUG:se.z3:Asserts -- [(< x#0, 5) (True)]
+DEBUG:se.z3:Cone -- []
+DEBUG:se.z3:Result -- {'y': 8}
+DEBUG:se.pathconstraint:Processed constraint: (< x#0, 5) (True)  (processed: True, path_len: 1)
+DEBUG:se.pathconstraint:New constraint: (< y#8, 5) (False)  (processed: False, path_len: 2)
+DEBUG:se.pathconstraint:Processed constraint: (< y#8, 5) (False)  (processed: True, path_len: 2)
+INFO:se.conc:Exploration complete

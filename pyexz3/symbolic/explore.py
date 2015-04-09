@@ -38,7 +38,7 @@ class ExplorationEngine:
         self.constraints_to_solve.append(constraint)
         # make sure to remember the input that led to this constraint
         constraint.inputs = self._getInputs()
-        self.C.append((self._getInputs(), constraint))
+        #self.C.append((self._getInputs(), constraint))
 
     def explore(self, max_iterations=0):
         self._oneExecution()
@@ -54,17 +54,26 @@ class ExplorationEngine:
                 continue
             self._setInputs(selected.inputs)
 
-            log.info("Selected constraint %s" % selected)
+            print("Selected constraint %s" % selected)
+            print("Selected input %s" % selected.inputs)
             asserts, query = selected.getAssertsAndQuery()
+            print("asserts %s" % asserts)
+            print("query %s" % query)
             model = self.solver.findCounterexample(asserts, query)
 
             if model == None:
                 continue
             else:
+                self.C.append(selected.inputs)
+                self.C.append(selected)
+                vardict = {}
                 for name in model.keys():
+                    print('Counterexample name: %s' % name),
+                    print('Counterexample val: %s' % model[name])
                     self._updateSymbolicParameter(name,model[name])
-
+                    vardict[name] = model[name]
             self._oneExecution(selected)
+            print('\n')
 
             iterations += 1
             self.num_processed_constraints += 1
@@ -92,7 +101,8 @@ class ExplorationEngine:
             log.info("Exploration complete")
             return True
         else:
-            log.info("%d constraints yet to solve (total: %d, already solved: %d)" % (num_constr, self.num_processed_constraints + num_constr, self.num_processed_constraints))
+            print("%d constraints yet to solve (total: %d, already solved: %d)" % (num_constr, self.num_processed_constraints + num_constr, self.num_processed_constraints))
+            print('\n')
             return False
 
     def _getConcrValue(self,v):

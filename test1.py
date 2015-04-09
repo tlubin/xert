@@ -1,7 +1,7 @@
 def f(x, y):
     def g():
-        if x < 1:
-            if y < 1:
+        if x < 5:
+            if y < 5:
                 return 1
             else:
                 return 2
