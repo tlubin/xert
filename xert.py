@@ -9,6 +9,10 @@ import xert_transform as xtr
 #import xert_symbolic as xsym
 import xert_init as xinit
 import os
+import logging
+sys.path.append(os.path.abspath('pyexz3'))
+from symbolic.loader import *
+from symbolic.explore import ExplorationEngine
 
 sys.path.append(os.path.abspath('codegen'))
 import codegen

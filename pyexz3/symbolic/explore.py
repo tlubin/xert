@@ -31,7 +31,7 @@ class ExplorationEngine:
 
         # outputs
         self.generated_inputs = []
-        self.C = []
+        #self.C = []
         self.execution_return_values = []
 
     def addConstraint(self, constraint):
@@ -54,26 +54,23 @@ class ExplorationEngine:
                 continue
             self._setInputs(selected.inputs)
 
-            print("Selected constraint %s" % selected)
-            print("Selected input %s" % selected.inputs)
+            log.info("Selected constraint %s" % selected)
+            log.info("Selected input %s" % selected.inputs)
             asserts, query = selected.getAssertsAndQuery()
-            print("asserts %s" % asserts)
-            print("query %s" % query)
+            log.info("asserts %s" % asserts)
+            log.info("query %s" % query)
             model = self.solver.findCounterexample(asserts, query)
 
             if model == None:
                 continue
             else:
-                self.C.append(selected.inputs)
-                self.C.append(selected)
-                vardict = {}
+                #self.C.append(selected.inputs)
+                #self.C.append(selected)
                 for name in model.keys():
-                    print('Counterexample name: %s' % name),
-                    print('Counterexample val: %s' % model[name])
+                    log.info('Counterexample name: %s' % name),
+                    log.info('Counterexample val: %s' % model[name])
                     self._updateSymbolicParameter(name,model[name])
-                    vardict[name] = model[name]
             self._oneExecution(selected)
-            print('\n')
 
             iterations += 1
             self.num_processed_constraints += 1
@@ -82,7 +79,7 @@ class ExplorationEngine:
                 log.info("Maximum number of iterations reached, terminating")
                 break
 
-        return self.generated_inputs, self.execution_return_values, self.C
+        return self.generated_inputs, self.execution_return_values, self.path
 
     # private
 
@@ -101,8 +98,7 @@ class ExplorationEngine:
             log.info("Exploration complete")
             return True
         else:
-            print("%d constraints yet to solve (total: %d, already solved: %d)" % (num_constr, self.num_processed_constraints + num_constr, self.num_processed_constraints))
-            print('\n')
+            log.info("%d constraints yet to solve (total: %d, already solved: %d)" % (num_constr, self.num_processed_constraints + num_constr, self.num_processed_constraints))
             return False
 
     def _getConcrValue(self,v):
@@ -115,12 +111,12 @@ class ExplorationEngine:
         args = self.symbolic_inputs
         inputs = [ (k,self._getConcrValue(args[k])) for k in args ]
         self.generated_inputs.append(inputs)
-        #print(inputs)
+        print(inputs)
 
     def _oneExecution(self,expected_path=None):
         self._recordInputs()
         self.path.reset(expected_path)
         ret = self.invocation.callFunction(self.symbolic_inputs)
-        #print(ret)
+        print(ret)
         self.execution_return_values.append(ret)
 

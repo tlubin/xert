@@ -11,5 +11,7 @@ def b2_pressed():
         b2_counter += 1
 
 def xert_asserts(old, new):
-    assert(old.b1_counter == new.b1_counter)
-    assert(old.b2_counter == new.b2_counter)
+    if (old.b1_counter != new.b1_counter) or (old.b2_counter != new.b2_counter):
+        return 0
+    else:
+        return 1
